@@ -11,6 +11,8 @@ import Product from './componets/Product';
 import products from './vsSchoolProducts';
 import TodoItem from './componets/TodoItem';
 import todosData from './todoData';
+import Clock from './componets/Clock';
+import Profile from './componets/Profile';
 
 // function App() {
 //   const jokeComponents = jokesData.map((joke) => <Joke key={joke.id} question={joke.question} punchline={joke.punchline} />)
@@ -204,7 +206,23 @@ import todosData from './todoData';
 //   }
 // }
 
+// class App extends React.Component {
+//   render(){
+//     return(
+//       <Clock name="rahul" />
+//     )
+//   }
+// }
 
-
+class App extends React.Component {
+  render(){
+    return(
+      <div>
+        <Clock />
+        <Profile />
+      </div>
+    )
+  }
+}
 
 export default App;
