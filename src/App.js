@@ -13,6 +13,7 @@ import TodoItem from './componets/TodoItem';
 import todosData from './todoData';
 import Clock from './componets/Clock';
 import Profile from './componets/Profile';
+import imagePath from './images/image4.jpg'
 
 // function App() {
 //   const jokeComponents = jokesData.map((joke) => <Joke key={joke.id} question={joke.question} punchline={joke.punchline} />)
@@ -95,8 +96,6 @@ import Profile from './componets/Profile';
 //   }
 // }
 
-
-
 // -----------------------state---------------------//
 
 // class App extends React.Component {
@@ -134,7 +133,6 @@ import Profile from './componets/Profile';
 //     )
 //   }
 // }
-
 
 // class App extends Component {
 //    constructor(){
@@ -178,7 +176,6 @@ import Profile from './componets/Profile';
 //   }
 // }
 
-
 // class App extends React.Component {
 //   constructor(){
 //     super()
@@ -214,12 +211,47 @@ import Profile from './componets/Profile';
 //   }
 // }
 
+// class App extends React.Component {
+//   constructor(){
+//     super()
+//     this.state = {
+//       todos: todosData
+//     }
+//   }
+
+//   render(){
+//     const todoComponents = this.state.todos.map((data) => <TodoItem key={data.id} data={data}/> )
+//     return(
+//       <div>
+//         {todoComponents}
+//         {/* <Clock />
+//         <Profile /> */}
+//         <img onMouseOver={() => console.log("Hovered")} src={imagePath} /><br/>
+//         <button onClick={handleClick}>Click Me</button>
+//       </div>
+//     )
+//   }
+// }
+
 class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      todos: todosData
+    }
+    
+    this.handleChange = this.handleChange.bind(this)
+  }
+  
+  handleChange(id){
+     
+  }
+
   render(){
+    const todoComponents = this.state.todos.map((data) => <TodoItem key={data.id} data={data}/> )
     return(
       <div>
-        <Clock />
-        <Profile />
+        {todoComponents}
       </div>
     )
   }
