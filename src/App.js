@@ -233,28 +233,78 @@ import imagePath from './images/image4.jpg'
 //   }
 // }
 
-class App extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      todos: todosData
-    }
+// class App extends React.Component {
+//   constructor(){
+//     super()
+//     this.state = {
+//       todos: todosData
+//     }
     
-    this.handleChange = this.handleChange.bind(this)
-  }
+//     this.handleChange = this.handleChange.bind(this)
+//   }
   
-  handleChange(id){
-     
-  }
+//   handleChange(id){
+//     this.setState(prevState => {
+//       const updatedTodos = prevState.todos.map(todo => {
+//         if(todo.id === id){
+//           todo.completed = !todo.completed
+//         } 
+//         return todo
+//       })
+//       return {
+//         todos: updatedTodos
+//       }
+//     })
+//   }
 
-  render(){
-    const todoComponents = this.state.todos.map((data) => <TodoItem key={data.id} data={data}/> )
-    return(
-      <div>
-        {todoComponents}
-      </div>
-    )
-  }
+//   render(){
+//     const todoComponents = this.state.todos.map((data) => <TodoItem key={data.id} data={data} handleChange={this.handleChange} />)
+//     return(
+//       <div>
+//         {todoComponents}
+//       </div>
+//     )
+//   }
+// }
+
+//-----------------------------------------------LifeCycle-----------------------------------------------//
+
+static getDerivedStateFromProps(props, state){
+  // return the new, updated state based upon the props 
+  // you-probably-don't need derived state.
 }
+
+getSnapshotBeforeUpdate(){
+  // Create a backup of the current way things are 
+}
+
+// componentDidMount(){
+//   // Get the data i need to correctly display
+// }
+
+// componentWillReceiveProps(nextProps){
+//   if (nextProps.whatever !== this.props.whatever){
+//     // Do something important here
+//   }
+// }
+
+shouldComponentUpdate(nextProps, nextState){
+  // return true if want it to update
+  // return false if not 
+}
+
+componentWillUnmount(){
+  // teardown or cleanup your code before your component disappears
+  // (E.g. remove event listeners)
+}
+
+componentWillMount(){
+
+}
+
+// componentWillUpdate(){
+
+// }
+
 
 export default App;
